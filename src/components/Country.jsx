@@ -6,20 +6,6 @@ import CountryWeather from './CountryWeather';
 const Country = ({ data }) => {
   const [weather, setWeather] = useState([]);
 
-  const styleUl = {
-    paddingLeft: '0',
-  };
-
-  const styleLi = {
-    marginLeft: '20px',
-  };
-
-  const styleFlag = {
-    marginTop: '1.5em',
-    width: '15%',
-    border: '1px solid black',
-  };
-
   useEffect(() => {
     const api_key = import.meta.env.VITE_SOME_KEY;
     //210e18024d6bf3315eff1699c88fedde
@@ -35,17 +21,13 @@ const Country = ({ data }) => {
       <h1>{data.name.common}</h1>
       <p>Capital : {data.capital}</p>
       <p>Area : {data.area}</p>
-      <ul style={styleUl}>
+      <ul>
         <h3>Languages</h3>
         {Object.keys(data.languages).map((key) => {
-          return (
-            <li key={key} style={styleLi}>
-              {data.languages[key]}
-            </li>
-          );
+          return <li key={key}>{data.languages[key]}</li>;
         })}
       </ul>
-      <img src={data.flags.png} alt={data.flags.alt} style={styleFlag} />
+      <img src={data.flags.png} alt={data.flags.alt} />
       <CountryWeather countryWeather={weather}></CountryWeather>
     </>
   );

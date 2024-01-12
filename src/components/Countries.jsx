@@ -1,6 +1,8 @@
 const Countries = ({ data, handleShow }) => {
   if (data.length > 10) {
-    return <li>To many mactches, specify another filter</li>;
+    return (
+      <li className="text-center">To many mactches, specify another filter</li>
+    );
   } else if (data.length == 1) {
     return null;
   } else {

@@ -38,15 +38,16 @@ function App() {
   };
 
   return (
-    <>
+    <div className="text-center mt-10 border-4 rounded-md border-slate-400 w-1/2 mx-auto h-auto py-5">
       <SearchBar handleSearch={handleSearch} />
-      <Countries
-        data={countriesToDisplay}
-        v
-        handleShow={handleShow}
-      ></Countries>
+      <div className="border-4 border-y-slate-200">
+        <Countries
+          data={countriesToDisplay}
+          handleShow={handleShow}
+        ></Countries>
+      </div>
       {showData && <Country data={showData} />}
-    </>
+    </div>
   );
 }
 
