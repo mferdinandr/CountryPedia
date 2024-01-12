@@ -38,16 +38,18 @@ function App() {
   };
 
   return (
-    <div className="text-center mt-10 border-4 rounded-md border-slate-400 w-1/2 mx-auto h-auto py-5">
-      <SearchBar handleSearch={handleSearch} />
-      <div className="border-4 border-y-slate-400	border-x-transparent py-4 mt-3">
-        <Countries
-          data={countriesToDisplay}
-          handleShow={handleShow}
-        ></Countries>
+    <>
+      <div className="text-center mt-10 border-4 rounded-md border-slate-400 w-1/2 mx-auto h-auto py-5">
+        <SearchBar handleSearch={handleSearch} />
+        <div className="border-4 border-y-slate-400	border-x-transparent py-4 mt-3">
+          <Countries
+            data={countriesToDisplay}
+            handleShow={handleShow}
+          ></Countries>
+        </div>
+        {showData && <Country data={showData} />}
       </div>
-      {showData && <Country data={showData} />}
-    </div>
+    </>
   );
 }
 
