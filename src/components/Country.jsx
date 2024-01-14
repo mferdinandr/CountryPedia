@@ -8,7 +8,8 @@ const Country = ({ data }) => {
 
   useEffect(() => {
     // const api_key = import.meta.env.VITE_SOME_KEY;
-    const api_key = process.env.API_KEY_VERCEL;
+    const api_key = import.meta.env.VITE_APP_API;
+
     axios
       .get(
         `https://api.openweathermap.org/data/2.5/weather?q=${data.capital}&appid=${api_key}`
