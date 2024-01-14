@@ -8,7 +8,6 @@ const Country = ({ data }) => {
 
   useEffect(() => {
     const api_key = import.meta.env.VITE_SOME_KEY;
-    //210e18024d6bf3315eff1699c88fedde
     axios
       .get(
         `https://api.openweathermap.org/data/2.5/weather?q=${data.capital}&appid=${api_key}`
