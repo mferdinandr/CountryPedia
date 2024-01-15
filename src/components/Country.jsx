@@ -7,7 +7,7 @@ const Country = ({ data }) => {
   const [weather, setWeather] = useState([]);
 
   useEffect(() => {
-    // const api_key = import.meta.env.VITE_SOME_KEY;
+    // const api_key = import.meta.env.VITE_SOME_KEY; //
     const api_key = import.meta.env.VITE_APP_API;
 
     axios
