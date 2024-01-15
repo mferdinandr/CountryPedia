@@ -8,11 +8,14 @@ const Country = ({ data }) => {
 
   useEffect(() => {
     // const api_key = import.meta.env.VITE_SOME_KEY;
-    const api_key = import.meta.env.VITE_APP_API;
+    // const api_key = import.meta.env.VITE_APP_API;
 
     axios
+      // .get(
+      //   `https://api.openweathermap.org/data/2.5/weather?q=${data.capital}&appid=${api_key}`
+      // )
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${data.capital}&appid=${api_key}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${data.capital}&appid=210e18024d6bf3315eff1699c88fedde`
       )
       .then((res) => setWeather(res.data));
   }, [data.capital]);
